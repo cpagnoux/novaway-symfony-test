@@ -13,8 +13,6 @@ class ActorType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('dvds')
-            ->add('blurays')
         ;
     }
 
