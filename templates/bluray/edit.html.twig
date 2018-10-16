@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Bluray{% endblock %}
+
+{% block body %}
+    <h1>Edit Bluray</h1>
+
+    {{ include('bluray/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('bluray_index') }}">back to list</a>
+
+    {{ include('bluray/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bluray{% endblock %}
+
+{% block body %}
+    <h1>Bluray</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bluray.id }}</td>
+            </tr>
+            <tr>
+                <th>Isan</th>
+                <td>{{ bluray.isan }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ bluray.title }}</td>
+            </tr>
+            <tr>
+                <th>ReleaseDate</th>
+                <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ bluray.duration }}</td>
+            </tr>
+            <tr>
+                <th>Storyline</th>
+                <td>{{ bluray.storyline }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ bluray.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bluray_index') }}">back to list</a>
+
+    <a href="{{ path('bluray_edit', {'id': bluray.id}) }}">edit</a>
+
+    {{ include('bluray/_delete_form.html.twig') }}
+{% endblock %}
