@@ -24,7 +24,7 @@ class Director
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\DVD", mappedBy="director", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Dvd", mappedBy="director", orphanRemoval=true)
      */
     private $dvds;
 
@@ -57,14 +57,14 @@ class Director
     }
 
     /**
-     * @return Collection|DVD[]
+     * @return Collection|Dvd[]
      */
     public function getDvds(): Collection
     {
         return $this->dvds;
     }
 
-    public function addDvd(DVD $dvd): self
+    public function addDvd(Dvd $dvd): self
     {
         if (!$this->dvds->contains($dvd)) {
             $this->dvds[] = $dvd;
@@ -74,7 +74,7 @@ class Director
         return $this;
     }
 
-    public function removeDvd(DVD $dvd): self
+    public function removeDvd(Dvd $dvd): self
     {
         if ($this->dvds->contains($dvd)) {
             $this->dvds->removeElement($dvd);

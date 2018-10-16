@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\DVD;
+use App\Entity\Dvd;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method DVD|null find($id, $lockMode = null, $lockVersion = null)
- * @method DVD|null findOneBy(array $criteria, array $orderBy = null)
- * @method DVD[]    findAll()
- * @method DVD[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Dvd|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Dvd|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Dvd[]    findAll()
+ * @method Dvd[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DVDRepository extends ServiceEntityRepository
+class DvdRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, DVD::class);
+        parent::__construct($registry, Dvd::class);
     }
 
 //    /**
-//     * @return DVD[] Returns an array of DVD objects
+//     * @return Dvd[] Returns an array of Dvd objects
 //     */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class DVDRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?DVD
+    public function findOneBySomeField($value): ?Dvd
     {
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')

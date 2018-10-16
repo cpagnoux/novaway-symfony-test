@@ -24,7 +24,7 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\DVD", mappedBy="actors")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Dvd", mappedBy="actors")
      */
     private $dvds;
 
@@ -57,14 +57,14 @@ class Actor
     }
 
     /**
-     * @return Collection|DVD[]
+     * @return Collection|Dvd[]
      */
     public function getDvds(): Collection
     {
         return $this->dvds;
     }
 
-    public function addDvd(DVD $dvd): self
+    public function addDvd(Dvd $dvd): self
     {
         if (!$this->dvds->contains($dvd)) {
             $this->dvds[] = $dvd;
@@ -74,7 +74,7 @@ class Actor
         return $this;
     }
 
-    public function removeDvd(DVD $dvd): self
+    public function removeDvd(Dvd $dvd): self
     {
         if ($this->dvds->contains($dvd)) {
             $this->dvds->removeElement($dvd);
