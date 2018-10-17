@@ -20,7 +20,7 @@ class DvdController extends AbstractController
      */
     public function index(DvdRepository $dvdRepository): Response
     {
-        return $this->render('dvd/index.html.twig', ['dvds' => $dvdRepository->findAll()]);
+        return $this->render('admin/dvd/index.html.twig', ['dvds' => $dvdRepository->findAll()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class DvdController extends AbstractController
             return $this->redirectToRoute('dvd_index');
         }
 
-        return $this->render('dvd/new.html.twig', [
+        return $this->render('admin/dvd/new.html.twig', [
             'dvd' => $dvd,
             'form' => $form->createView(),
         ]);
@@ -51,7 +51,7 @@ class DvdController extends AbstractController
      */
     public function show(Dvd $dvd): Response
     {
-        return $this->render('dvd/show.html.twig', ['dvd' => $dvd]);
+        return $this->render('admin/dvd/show.html.twig', ['dvd' => $dvd]);
     }
 
     /**
@@ -68,7 +68,7 @@ class DvdController extends AbstractController
             return $this->redirectToRoute('dvd_edit', ['id' => $dvd->getId()]);
         }
 
-        return $this->render('dvd/edit.html.twig', [
+        return $this->render('admin/dvd/edit.html.twig', [
             'dvd' => $dvd,
             'form' => $form->createView(),
         ]);

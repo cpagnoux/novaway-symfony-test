@@ -20,7 +20,7 @@ class DirectorController extends AbstractController
      */
     public function index(DirectorRepository $directorRepository): Response
     {
-        return $this->render('director/index.html.twig', ['directors' => $directorRepository->findAll()]);
+        return $this->render('admin/director/index.html.twig', ['directors' => $directorRepository->findAll()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class DirectorController extends AbstractController
             return $this->redirectToRoute('director_index');
         }
 
-        return $this->render('director/new.html.twig', [
+        return $this->render('admin/director/new.html.twig', [
             'director' => $director,
             'form' => $form->createView(),
         ]);
@@ -51,7 +51,7 @@ class DirectorController extends AbstractController
      */
     public function show(Director $director): Response
     {
-        return $this->render('director/show.html.twig', ['director' => $director]);
+        return $this->render('admin/director/show.html.twig', ['director' => $director]);
     }
 
     /**
@@ -68,7 +68,7 @@ class DirectorController extends AbstractController
             return $this->redirectToRoute('director_edit', ['id' => $director->getId()]);
         }
 
-        return $this->render('director/edit.html.twig', [
+        return $this->render('admin/director/edit.html.twig', [
             'director' => $director,
             'form' => $form->createView(),
         ]);

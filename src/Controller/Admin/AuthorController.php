@@ -20,7 +20,7 @@ class AuthorController extends AbstractController
      */
     public function index(AuthorRepository $authorRepository): Response
     {
-        return $this->render('author/index.html.twig', ['authors' => $authorRepository->findAll()]);
+        return $this->render('admin/author/index.html.twig', ['authors' => $authorRepository->findAll()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class AuthorController extends AbstractController
             return $this->redirectToRoute('author_index');
         }
 
-        return $this->render('author/new.html.twig', [
+        return $this->render('admin/author/new.html.twig', [
             'author' => $author,
             'form' => $form->createView(),
         ]);
@@ -51,7 +51,7 @@ class AuthorController extends AbstractController
      */
     public function show(Author $author): Response
     {
-        return $this->render('author/show.html.twig', ['author' => $author]);
+        return $this->render('admin/author/show.html.twig', ['author' => $author]);
     }
 
     /**
@@ -68,7 +68,7 @@ class AuthorController extends AbstractController
             return $this->redirectToRoute('author_edit', ['id' => $author->getId()]);
         }
 
-        return $this->render('author/edit.html.twig', [
+        return $this->render('admin/author/edit.html.twig', [
             'author' => $author,
             'form' => $form->createView(),
         ]);

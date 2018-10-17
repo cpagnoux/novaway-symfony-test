@@ -20,7 +20,7 @@ class BlurayController extends AbstractController
      */
     public function index(BlurayRepository $blurayRepository): Response
     {
-        return $this->render('bluray/index.html.twig', ['blurays' => $blurayRepository->findAll()]);
+        return $this->render('admin/bluray/index.html.twig', ['blurays' => $blurayRepository->findAll()]);
     }
 
     /**
@@ -40,7 +40,7 @@ class BlurayController extends AbstractController
             return $this->redirectToRoute('bluray_index');
         }
 
-        return $this->render('bluray/new.html.twig', [
+        return $this->render('admin/bluray/new.html.twig', [
             'bluray' => $bluray,
             'form' => $form->createView(),
         ]);
@@ -51,7 +51,7 @@ class BlurayController extends AbstractController
      */
     public function show(Bluray $bluray): Response
     {
-        return $this->render('bluray/show.html.twig', ['bluray' => $bluray]);
+        return $this->render('admin/bluray/show.html.twig', ['bluray' => $bluray]);
     }
 
     /**
@@ -68,7 +68,7 @@ class BlurayController extends AbstractController
             return $this->redirectToRoute('bluray_edit', ['id' => $bluray->getId()]);
         }
 
-        return $this->render('bluray/edit.html.twig', [
+        return $this->render('admin/bluray/edit.html.twig', [
             'bluray' => $bluray,
             'form' => $form->createView(),
         ]);
