@@ -1,0 +1,38 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Bienvenue dans le back office !{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md">
+          <h2>Les livres</h2>
+
+          <ul>
+              <li>
+                  <a href="{{ path('book_index') }}">Livres</a>
+              </li>
+              <li>
+                  <a href="{{ path('author_index') }}">Auteurs</a>
+              </li>
+          </ul>
+        </div>
+        <div class="col-md">
+          <h2>Les films</h2>
+
+          <ul>
+              <li>
+                  <a href="{{ path('dvd_index') }}">Films en DVD</a>
+              </li>
+              <li>
+                  <a href="{{ path('bluray_index') }}">Films en bluray</a>
+              </li>
+              <li>
+                  <a href="{{ path('director_index') }}">Réalisateurs</a>
+              </li>
+              <li>
+                  <a href="{{ path('actor_index') }}">Acteurs</a>
+              </li>
+          </ul>
+        </div>
+    </div>
+{% endblock %}
