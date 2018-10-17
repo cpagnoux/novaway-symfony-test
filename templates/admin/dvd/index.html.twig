@@ -29,8 +29,8 @@
                 <td>{{ dvd.storyline }}</td>
                 <td>{{ dvd.price }}</td>
                 <td>
-                    <a href="{{ path('dvd_show', {'id': dvd.id}) }}">show</a>
-                    <a href="{{ path('dvd_edit', {'id': dvd.id}) }}">edit</a>
+                    <a href="{{ path('dvd_show', {'id': dvd.id}) }}">voir</a>
+                    <a href="{{ path('dvd_edit', {'id': dvd.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('dvd_new') }}">Create new</a>
+    <a href="{{ path('dvd_new') }}">Ajouter</a>
 {% endblock %}

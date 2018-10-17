@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Book</h1>
 
-    {{ include('admin/book/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/book/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('book_index') }}">back to list</a>
+    <a href="{{ path('book_index') }}">retour vers la liste</a>
 
     {{ include('admin/book/_delete_form.html.twig') }}
 {% endblock %}

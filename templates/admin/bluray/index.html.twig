@@ -29,8 +29,8 @@
                 <td>{{ bluray.storyline }}</td>
                 <td>{{ bluray.price }}</td>
                 <td>
-                    <a href="{{ path('bluray_show', {'id': bluray.id}) }}">show</a>
-                    <a href="{{ path('bluray_edit', {'id': bluray.id}) }}">edit</a>
+                    <a href="{{ path('bluray_show', {'id': bluray.id}) }}">voir</a>
+                    <a href="{{ path('bluray_edit', {'id': bluray.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('bluray_new') }}">Create new</a>
+    <a href="{{ path('bluray_new') }}">Ajouter</a>
 {% endblock %}

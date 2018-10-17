@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Director</h1>
 
-    {{ include('admin/director/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('admin/director/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('director_index') }}">back to list</a>
+    <a href="{{ path('director_index') }}">retour vers la liste</a>
 
     {{ include('admin/director/_delete_form.html.twig') }}
 {% endblock %}

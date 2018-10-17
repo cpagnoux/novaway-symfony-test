@@ -19,8 +19,8 @@
                 <td>{{ director.id }}</td>
                 <td>{{ director.name }}</td>
                 <td>
-                    <a href="{{ path('director_show', {'id': director.id}) }}">show</a>
-                    <a href="{{ path('director_edit', {'id': director.id}) }}">edit</a>
+                    <a href="{{ path('director_show', {'id': director.id}) }}">voir</a>
+                    <a href="{{ path('director_edit', {'id': director.id}) }}">éditer</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('director_new') }}">Create new</a>
+    <a href="{{ path('director_new') }}">Ajouter</a>
 {% endblock %}
