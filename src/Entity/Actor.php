@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ActorRepository")
+ * @ORM\Table(indexes={@ORM\Index(columns={"name"}, flags={"fulltext"})})
  */
 class Actor
 {

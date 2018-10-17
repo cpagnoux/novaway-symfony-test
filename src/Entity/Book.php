@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BookRepository")
+ * @ORM\Table(indexes={@ORM\Index(columns={"isbn", "title"}, flags={"fulltext"})})
  */
 class Book
 {

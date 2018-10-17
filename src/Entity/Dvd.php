@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DvdRepository")
+ * @ORM\Table(indexes={@ORM\Index(columns={"isan", "title"}, flags={"fulltext"})})
  */
 class Dvd
 {
