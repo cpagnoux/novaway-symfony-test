@@ -8,12 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>ISBN</th>
                 <th>Titre</th>
                 <th>Date de parution</th>
-                <th>Nombre de pages</th>
-                <th>Résumé</th>
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -21,12 +18,9 @@
         <tbody>
         {% for book in books %}
             <tr>
-                <td>{{ book.id }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>{{ book.title }}</td>
                 <td>{{ book.releaseDate ? book.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ book.numPages }}</td>
-                <td>{{ book.summary }}</td>
                 <td>{{ book.price }}</td>
                 <td>
                     <a href="{{ path('book_show', {'id': book.id}) }}">voir</a>

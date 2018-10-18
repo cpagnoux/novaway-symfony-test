@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>actions</th>
             </tr>
@@ -16,7 +15,6 @@
         <tbody>
         {% for director in directors %}
             <tr>
-                <td>{{ director.id }}</td>
                 <td>{{ director.name }}</td>
                 <td>
                     <a href="{{ path('director_show', {'id': director.id}) }}">voir</a>

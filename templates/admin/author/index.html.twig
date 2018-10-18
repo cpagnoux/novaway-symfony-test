@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>actions</th>
             </tr>
@@ -16,7 +15,6 @@
         <tbody>
         {% for author in authors %}
             <tr>
-                <td>{{ author.id }}</td>
                 <td>{{ author.name }}</td>
                 <td>
                     <a href="{{ path('author_show', {'id': author.id}) }}">voir</a>

@@ -8,12 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>ISAN</th>
                 <th>Titre</th>
                 <th>Date de sortie</th>
-                <th>Durée</th>
-                <th>Résumé</th>
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -21,12 +18,9 @@
         <tbody>
         {% for dvd in dvds %}
             <tr>
-                <td>{{ dvd.id }}</td>
                 <td>{{ dvd.isan }}</td>
                 <td>{{ dvd.title }}</td>
                 <td>{{ dvd.releaseDate ? dvd.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ dvd.duration }}</td>
-                <td>{{ dvd.storyline }}</td>
                 <td>{{ dvd.price }}</td>
                 <td>
                     <a href="{{ path('dvd_show', {'id': dvd.id}) }}">voir</a>

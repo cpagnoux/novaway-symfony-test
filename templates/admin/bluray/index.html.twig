@@ -8,12 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>ISAN</th>
                 <th>Titre</th>
                 <th>Date de sortie</th>
-                <th>Durée</th>
-                <th>Résumé</th>
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -21,12 +18,9 @@
         <tbody>
         {% for bluray in blurays %}
             <tr>
-                <td>{{ bluray.id }}</td>
                 <td>{{ bluray.isan }}</td>
                 <td>{{ bluray.title }}</td>
                 <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ bluray.duration }}</td>
-                <td>{{ bluray.storyline }}</td>
                 <td>{{ bluray.price }}</td>
                 <td>
                     <a href="{{ path('bluray_show', {'id': bluray.id}) }}">voir</a>
