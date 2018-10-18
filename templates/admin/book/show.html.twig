@@ -1,38 +1,38 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block title %}Book{% endblock %}
+{% block title %}Livre{% endblock %}
 
 {% block body %}
-    <h1>Book</h1>
+    <h1>Livre</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ book.id }}</td>
             </tr>
             <tr>
-                <th>Isbn</th>
+                <th>ISBN</th>
                 <td>{{ book.isbn }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ book.title }}</td>
             </tr>
             <tr>
-                <th>ReleaseDate</th>
+                <th>Date de parution</th>
                 <td>{{ book.releaseDate ? book.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>NumPages</th>
+                <th>Nombre de pages</th>
                 <td>{{ book.numPages }}</td>
             </tr>
             <tr>
-                <th>Summary</th>
+                <th>Résumé</th>
                 <td>{{ book.summary }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ book.price }}</td>
             </tr>
         </tbody>

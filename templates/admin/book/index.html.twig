@@ -1,20 +1,20 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block title %}Book index{% endblock %}
+{% block title %}Livres{% endblock %}
 
 {% block body %}
-    <h1>Book index</h1>
+    <h1>Livres</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Isbn</th>
-                <th>Title</th>
-                <th>ReleaseDate</th>
-                <th>NumPages</th>
-                <th>Summary</th>
-                <th>Price</th>
+                <th>ID</th>
+                <th>ISBN</th>
+                <th>Titre</th>
+                <th>Date de parution</th>
+                <th>Nombre de pages</th>
+                <th>Résumé</th>
+                <th>Prix</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -35,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>

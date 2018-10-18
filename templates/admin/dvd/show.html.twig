@@ -1,38 +1,38 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block title %}Dvd{% endblock %}
+{% block title %}DVD{% endblock %}
 
 {% block body %}
-    <h1>Dvd</h1>
+    <h1>DVD</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ dvd.id }}</td>
             </tr>
             <tr>
-                <th>Isan</th>
+                <th>ISAN</th>
                 <td>{{ dvd.isan }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ dvd.title }}</td>
             </tr>
             <tr>
-                <th>ReleaseDate</th>
+                <th>Date de sortie</th>
                 <td>{{ dvd.releaseDate ? dvd.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
+                <th>Durée</th>
                 <td>{{ dvd.duration }}</td>
             </tr>
             <tr>
-                <th>Storyline</th>
+                <th>Résumé</th>
                 <td>{{ dvd.storyline }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ dvd.price }}</td>
             </tr>
         </tbody>

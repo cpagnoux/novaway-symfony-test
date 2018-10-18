@@ -1,38 +1,38 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block title %}Bluray{% endblock %}
+{% block title %}Blu-ray{% endblock %}
 
 {% block body %}
-    <h1>Bluray</h1>
+    <h1>Blu-ray</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ bluray.id }}</td>
             </tr>
             <tr>
-                <th>Isan</th>
+                <th>ISAN</th>
                 <td>{{ bluray.isan }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ bluray.title }}</td>
             </tr>
             <tr>
-                <th>ReleaseDate</th>
+                <th>Date de sortie</th>
                 <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Duration</th>
+                <th>Durée</th>
                 <td>{{ bluray.duration }}</td>
             </tr>
             <tr>
-                <th>Storyline</th>
+                <th>Résumé</th>
                 <td>{{ bluray.storyline }}</td>
             </tr>
             <tr>
-                <th>Price</th>
+                <th>Prix</th>
                 <td>{{ bluray.price }}</td>
             </tr>
         </tbody>

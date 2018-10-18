@@ -1,20 +1,20 @@
 {% extends 'admin/layout.html.twig' %}
 
-{% block title %}Dvd index{% endblock %}
+{% block title %}DVD{% endblock %}
 
 {% block body %}
-    <h1>Dvd index</h1>
+    <h1>DVD</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Isan</th>
-                <th>Title</th>
-                <th>ReleaseDate</th>
-                <th>Duration</th>
-                <th>Storyline</th>
-                <th>Price</th>
+                <th>ID</th>
+                <th>ISAN</th>
+                <th>Titre</th>
+                <th>Date de sortie</th>
+                <th>Durée</th>
+                <th>Résumé</th>
+                <th>Prix</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -35,7 +35,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="8">no records found</td>
+                <td colspan="8">aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
