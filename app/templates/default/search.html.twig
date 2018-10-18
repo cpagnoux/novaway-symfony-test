@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats de la recherche{% endblock %}
+
+{% block body %}
+    <form class="form-inline d-flex justify-content-center pb-5" method="post">
+        <input class="form-control" type="search" name="term" value="{{ search_term }}">
+        <button class="btn btn-outline-success" type="submit">Rechercher</button>
+    </form>
+
+    {% for result in results %}
+        <div class="card">
+            <div class="card-body">
+                {{ result.type }}&emsp;<strong>{{ result.title }}</strong>&emsp;par {{ result.creator }}&emsp;({{ result.number }})
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

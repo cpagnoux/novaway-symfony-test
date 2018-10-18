@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Éditer le livre{% endblock %}
+
+{% block body %}
+    <h1>Éditer le livre</h1>
+
+    {{ include('admin/book/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('book_index') }}">retour vers la liste</a>
+
+    {{ include('admin/book/_delete_form.html.twig') }}
+{% endblock %}

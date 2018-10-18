@@ -1,0 +1,39 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+    <h1>Livres</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Titre</th>
+                <th>Date de parution</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.isbn }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.releaseDate ? book.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ book.price }}</td>
+                <td>
+                    <a href="{{ path('book_show', {'id': book.id}) }}">voir</a>
+                    <a href="{{ path('book_edit', {'id': book.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('book_new') }}">Ajouter</a>
+{% endblock %}

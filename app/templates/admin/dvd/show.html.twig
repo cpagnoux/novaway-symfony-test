@@ -1,0 +1,58 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}DVD{% endblock %}
+
+{% block body %}
+    <h1>DVD</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ dvd.id }}</td>
+            </tr>
+            <tr>
+                <th>ISAN</th>
+                <td>{{ dvd.isan }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ dvd.title }}</td>
+            </tr>
+            <tr>
+                <th>Réalisateur</th>
+                <td>{{ dvd.director.name }}</td>
+            </tr>
+            <tr>
+                <th>Acteurs</th>
+                <td>
+                {% for actor in dvd.actors %}
+                    {{ actor.name }}{% if not loop.last %},{% endif %}
+                {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Date de sortie</th>
+                <td>{{ dvd.releaseDate ? dvd.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Durée</th>
+                <td>{{ dvd.duration }}</td>
+            </tr>
+            <tr>
+                <th>Résumé</th>
+                <td>{{ dvd.storyline }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ dvd.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dvd_index') }}">retour vers la liste</a>
+
+    <a href="{{ path('dvd_edit', {'id': dvd.id}) }}">éditer</a>
+
+    {{ include('admin/dvd/_delete_form.html.twig') }}
+{% endblock %}

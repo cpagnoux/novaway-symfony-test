@@ -1,0 +1,26 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Acteur{% endblock %}
+
+{% block body %}
+    <h1>Acteur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ actor.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ actor.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('actor_index') }}">retour vers la liste</a>
+
+    <a href="{{ path('actor_edit', {'id': actor.id}) }}">éditer</a>
+
+    {{ include('admin/actor/_delete_form.html.twig') }}
+{% endblock %}

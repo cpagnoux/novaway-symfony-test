@@ -1,0 +1,58 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Blu-ray{% endblock %}
+
+{% block body %}
+    <h1>Blu-ray</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ bluray.id }}</td>
+            </tr>
+            <tr>
+                <th>ISAN</th>
+                <td>{{ bluray.isan }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ bluray.title }}</td>
+            </tr>
+            <tr>
+                <th>Réalisateur</th>
+                <td>{{ bluray.director.name }}</td>
+            </tr>
+            <tr>
+                <th>Acteurs</th>
+                <td>
+                {% for actor in bluray.actors %}
+                    {{ actor.name }}{% if not loop.last %},{% endif %}
+                {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>Date de sortie</th>
+                <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Durée</th>
+                <td>{{ bluray.duration }}</td>
+            </tr>
+            <tr>
+                <th>Résumé</th>
+                <td>{{ bluray.storyline }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ bluray.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bluray_index') }}">retour vers la liste</a>
+
+    <a href="{{ path('bluray_edit', {'id': bluray.id}) }}">éditer</a>
+
+    {{ include('admin/bluray/_delete_form.html.twig') }}
+{% endblock %}

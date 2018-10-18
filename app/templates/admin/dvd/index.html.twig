@@ -1,0 +1,39 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}DVD{% endblock %}
+
+{% block body %}
+    <h1>DVD</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ISAN</th>
+                <th>Titre</th>
+                <th>Date de sortie</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dvd in dvds %}
+            <tr>
+                <td>{{ dvd.isan }}</td>
+                <td>{{ dvd.title }}</td>
+                <td>{{ dvd.releaseDate ? dvd.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ dvd.price }}</td>
+                <td>
+                    <a href="{{ path('dvd_show', {'id': dvd.id}) }}">voir</a>
+                    <a href="{{ path('dvd_edit', {'id': dvd.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dvd_new') }}">Ajouter</a>
+{% endblock %}

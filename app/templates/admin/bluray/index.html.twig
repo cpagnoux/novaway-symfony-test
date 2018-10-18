@@ -1,0 +1,39 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Blu-rays{% endblock %}
+
+{% block body %}
+    <h1>Blu-rays</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ISAN</th>
+                <th>Titre</th>
+                <th>Date de sortie</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bluray in blurays %}
+            <tr>
+                <td>{{ bluray.isan }}</td>
+                <td>{{ bluray.title }}</td>
+                <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ bluray.price }}</td>
+                <td>
+                    <a href="{{ path('bluray_show', {'id': bluray.id}) }}">voir</a>
+                    <a href="{{ path('bluray_edit', {'id': bluray.id}) }}">éditer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bluray_new') }}">Ajouter</a>
+{% endblock %}

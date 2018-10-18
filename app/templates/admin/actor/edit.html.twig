@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Éditer l'acteur{% endblock %}
+
+{% block body %}
+    <h1>Éditer l'acteur</h1>
+
+    {{ include('admin/actor/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('actor_index') }}">retour vers la liste</a>
+
+    {{ include('admin/actor/_delete_form.html.twig') }}
+{% endblock %}

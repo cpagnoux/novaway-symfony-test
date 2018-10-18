@@ -1,0 +1,10 @@
+#!/bin/bash
+
+until mysql -h "$DB_HOST" -u "$DB_USER" -p"$DB_PASSWORD" -e "" &> /dev/null; do
+	echo "Waiting for confirmation of MySQL service startup"
+	sleep 5
+done
+
+php bin/console doctrine:migrations:migrate
+
+exec "$@"

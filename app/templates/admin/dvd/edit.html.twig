@@ -1,0 +1,13 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Éditer le DVD{% endblock %}
+
+{% block body %}
+    <h1>Éditer le DVD</h1>
+
+    {{ include('admin/dvd/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('dvd_index') }}">retour vers la liste</a>
+
+    {{ include('admin/dvd/_delete_form.html.twig') }}
+{% endblock %}
