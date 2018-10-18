@@ -20,6 +20,10 @@
                 <td>{{ book.title }}</td>
             </tr>
             <tr>
+                <th>Auteur</th>
+                <td>{{ book.author.name }}</td>
+            </tr>
+            <tr>
                 <th>Date de parution</th>
                 <td>{{ book.releaseDate ? book.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>

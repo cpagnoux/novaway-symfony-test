@@ -20,6 +20,18 @@
                 <td>{{ bluray.title }}</td>
             </tr>
             <tr>
+                <th>Réalisateur</th>
+                <td>{{ bluray.director.name }}</td>
+            </tr>
+            <tr>
+                <th>Acteurs</th>
+                <td>
+                {% for actor in bluray.actors %}
+                    {{ actor.name }}{% if not loop.last %},{% endif %}
+                {% endfor %}
+                </td>
+            </tr>
+            <tr>
                 <th>Date de sortie</th>
                 <td>{{ bluray.releaseDate ? bluray.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>

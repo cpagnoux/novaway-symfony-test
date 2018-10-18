@@ -20,6 +20,18 @@
                 <td>{{ dvd.title }}</td>
             </tr>
             <tr>
+                <th>Réalisateur</th>
+                <td>{{ dvd.director.name }}</td>
+            </tr>
+            <tr>
+                <th>Acteurs</th>
+                <td>
+                {% for actor in dvd.actors %}
+                    {{ actor.name }}{% if not loop.last %},{% endif %}
+                {% endfor %}
+                </td>
+            </tr>
+            <tr>
                 <th>Date de sortie</th>
                 <td>{{ dvd.releaseDate ? dvd.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
