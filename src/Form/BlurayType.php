@@ -13,20 +13,33 @@ class BlurayType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('isan')
-            ->add('title')
+            ->add('isan', null, [
+                'label' => 'ISAN',
+            ])
+            ->add('title', null, [
+                'label' => 'Titre',
+            ])
             ->add('releaseDate', DateType::class, [
+                'label' => 'Date de sortie',
                 'widget' => 'single_text',
             ])
-            ->add('duration')
-            ->add('storyline')
-            ->add('price')
+            ->add('duration', null, [
+                'label' => 'Durée',
+            ])
+            ->add('storyline', null, [
+                'label' => 'Résumé',
+            ])
+            ->add('price', null, [
+                'label' => 'Prix',
+            ])
             ->add('director', null, [
                 'choice_label' => 'name',
-                'placeholder' => 'Choose an option',
+                'label' => 'Réalisateur',
+                'placeholder' => 'Sélectionner',
             ])
             ->add('actors', null, [
                 'choice_label' => 'name',
+                'label' => 'Acteurs',
             ])
         ;
     }
